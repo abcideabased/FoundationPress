@@ -1,0 +1,4 @@
+// Mainly used in fill colors for inline SVGs
+@function url-friendly-color($color) {
+    @return '%23' + str-slice('#{$color}', 2, -1)
+}
