@@ -8,7 +8,7 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
         array(
             'name' => __( 'Primary Color', 'foundationpress' ),
             'slug' => 'primary',
-            'color' => '#1779ba',
+            'color' => '#007dc3',
         ),
         array(
             'name' => __( 'Secondary Color', 'foundationpress' ),
