@@ -4,10 +4,13 @@
 
 .main-grid {
   @include xy-grid();
-  margin-top: 1rem;
+  @include flex-align(center);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
   @include breakpoint(medium) {
-    margin-top: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   &.sidebar-left {
@@ -27,6 +30,9 @@
   // Full width template
   .main-content-full-width {
     @include xy-cell(12);
+    @include breakpoint(large) {
+      @include xy-cell(10);
+    }
   }
 
   // Default template
@@ -47,7 +53,7 @@
 
     @include breakpoint(medium) {
       @include xy-cell(4);
-      margin-top: 1rem;
+      padding-top: 1rem;
     }
 
   }
