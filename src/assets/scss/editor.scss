@@ -84,3 +84,14 @@ body {
 .wp-block-latest-posts.is-grid{
 	list-style: none;
 }
+
+// Responsive embed
+
+// 16x9
+.wp-embed-aspect-16-9 {
+  @include responsive-embed(widescreen);
+}
+// 4x3
+.wp-embed-aspect-4-3 {
+	@include responsive-embed(default);
+}
