@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<main id="content" class="main-content" tabindex="-1">
 			<?php woocommerce_content(); ?>
 		</main>
 	<?php get_sidebar(); ?>

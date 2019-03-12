@@ -9,9 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-labelledby="entry-title">
 	<header>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<h1 id="entry-title" class="entry-title"><?php the_title(); ?></h1>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -21,7 +21,7 @@
 		<?php
 			wp_link_pages(
 				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+					'before' => '<nav id="page-nav" aria-label="Page navigation"><p>' . __( 'Pages:', 'foundationpress' ),
 					'after'  => '</p></nav>',
 				)
 			);

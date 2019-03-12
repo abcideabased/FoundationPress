@@ -10,13 +10,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php if(is_single()): ?> aria-labelledby="entry-title"<?php else: ?> aria-labelledby="entry-title-<?php the_ID(); ?>"<?php endif; ?>>
 	<header>
 	<?php
 		if ( is_single() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 id="entry-title" class="entry-title">', '</h1>' );
 		} else {
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 id="entry-title-' . the_ID() . '" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 	?>
 		<?php foundationpress_entry_meta(); ?>
@@ -29,7 +29,7 @@
 		<?php
 			wp_link_pages(
 				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+					'before' => '<nav id="page-nav" aria-label="Page navigation"><p>' . __( 'Pages:', 'foundationpress' ),
 					'after'  => '</p></nav>',
 				)
 			);
