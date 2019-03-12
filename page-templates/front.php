@@ -4,95 +4,148 @@ Template Name: Front
 */
 get_header(); ?>
 
-<header class="front-hero" role="banner">
-	<div class="marketing">
-		<div class="tagline">
-			<h1><?php bloginfo( 'name' ); ?></h1>
-			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Download FoundationPress</a>
-		</div>
-
-		<div class="watch">
-			<span id="stargazers"><a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a></span>
-			<span id="twitter"><a href="https://twitter.com/olefredrik">@olefredrik</a></span>
-		</div>
-	</div>
-
-</header>
-
-<?php do_action( 'foundationpress_before_content' ); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-<section class="intro" role="main">
-	<div class="fp-intro">
-
-		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-			<div class="entry-content">
-				<?php the_content(); ?>
+<?php
+/**
+ * Hero
+ */
+?>
+<section class="front-hero full-height" aria-labelledby="hero-title">
+	<div class="reversed full-height">
+		<div class="grid-container full-height">
+			<div class="grid-x full-height align-center-middle">
+				<div class="cell medium-8 large-6">
+					<article class="marketing text-center">
+						<header class="tagline">
+							<h1 id="hero-title" class="hero-title"><?php the_title(); ?></h1>
+							<h2 class="h4"><?php bloginfo( 'description' ); ?></h2>
+						</header>
+					</article>
+				</div>
 			</div>
-			<footer>
-				<?php
-					wp_link_pages(
-						array(
-							'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-							'after'  => '</p></nav>',
-						)
-					);
-				?>
-				<p><?php the_tags(); ?></p>
-			</footer>
-			<?php do_action( 'foundationpress_page_before_comments' ); ?>
-			<?php comments_template(); ?>
-			<?php do_action( 'foundationpress_page_after_comments' ); ?>
 		</div>
-
 	</div>
-
 </section>
-<?php endwhile; ?>
-<?php do_action( 'foundationpress_after_content' ); ?>
+<?php // END Hero ?>
 
-<div class="section-divider">
-	<hr />
-</div>
+<?php // END Top Frame
+echo '</div>'; ?>
+
+<main id="content" tabindex="-1">
+
+	<?php
+	/**
+	 * Intro
+	 */
+	?>
+	<?php do_action( 'foundationpress_before_content' ); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+	<section class="intro" aria-labelledby="intro-title">
+		<div class="section-spacing">
+			<div class="grid-container">
+				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<div class="grid-x grid-padding-x grid-padding-y align-center-middle">
+						<div class="cell small-3 medium-5 large-4 text-center medium-text-left">
+							<img src="https://source.unsplash.com/random/1920x1080" alt="" />
+
+						</div>
+						<div class="cell medium-7 large-8 text-center medium-text-left">
+							<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+							<header class="show-for-sr">
+							<h2 id="intro-title" class="intro-title">Intro</h2>
+							</header>
+							<div class="intro-content">
+								<?php the_content(); ?>
+							</div>
+							<footer>
+								<?php
+									wp_link_pages(
+										array(
+											'before' => '<nav id="page-nav" aria-label="Page navigation"><p>' . __( 'Pages:', 'foundationpress' ),
+											'after'  => '</p></nav>',
+										)
+									);
+								?>
+								<p><?php the_tags(); ?></p>
+							</footer>
+							<?php do_action( 'foundationpress_page_before_comments' ); ?>
+							<?php comments_template(); ?>
+							<?php do_action( 'foundationpress_page_after_comments' ); ?>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+	<?php endwhile; ?>
+	<?php do_action( 'foundationpress_after_content' ); ?>
+	<?php // END Intro ?>
 
 
-<section class="benefits">
-	<header>
-		<h2>Build Foundation based sites, powered by WordPress</h2>
-		<h4>Foundation is the professional choice for designers, developers and teams. <br /> WordPress is by far, <a href="http://trends.builtwith.com/cms">the world's most popular CMS</a> (currently powering 38% of the web).</h4>
-	</header>
+	<?php
+	/**
+	 * Latest Posts
+	 */
 
-	<div class="semantic">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/semantic.svg" alt="semantic">
-		<h3>Semantic</h3>
-		<p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
-	</div>
+	// Vars
+	$posts_total = 3;
+	?>
 
-	<div class="responsive">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/responsive.svg" alt="responsive">
-		<h3>Responsive</h3>
-		<p>You can build for small devices first. Then, as devices get larger and larger, layer in more complexity for a complete responsive design.</p>
+	<?php // WP_Query arguments
+	$args = array(
+		'post_type'              => array( 'post' ),
+		'post_status'            => array( 'publish' ),
+		'paged'                  => '1',
+		'posts_per_page'         => $posts_total,
+	);
 
-	</div>
+	// The Query
+	$query = new WP_Query( $args );
 
-	<div class="customizable">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/customizable.svg" alt="customizable">
-		<h3>Customizable</h3>
-		<p>You can customize your build to include or remove certain elements, as well as define the size of columns, colors, font size and more.</p>
+	// The Loop
+	if ( $query->have_posts() ) : ?>
+	<section class="latest-posts" aria-labelledby="latest-post-title">
+		<div class="section-spacing">
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x grid-padding-y align-center align-stretch">
+					<div class="cell reversed">
+						<header>
+							<h2 id="latest-post-title" class="latest-post-title" class="text-center">Latest Posts</h2>
+						</header>
+					</div>
 
-	</div>
+					<?php $i = 1; // Count ?>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<div class="professional">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/professional.svg" alt="professional">
-		<h3>Professional</h3>
-		<p>Millions of designers and developers depend on Foundation. We have business support, training and consulting to help grow your product or service.</p>
-	</div>
+					<?php // The content ?>
+					<div class="cell small-8 medium-6 large-4 text-center<?php if($i == $posts_total): ?> hide-for-medium-only<?php endif; ?>">
+						<article <?php post_class('card full-height'); ?> id="post-<?php the_ID(); ?>" aria-labelledby="post-title-<?php the_ID(); ?>">
+							<div class="card-image">
+								<?php if ( has_post_thumbnail( $post->ID ) ) :
+									echo the_post_thumbnail('small');
+								endif; ?>
+							</div>
+						  <div class="card-section">
+								<header>
+									<h3 id="post-title-<?php the_ID(); ?>" class="post-title"><?php the_title(); ?></h3>
+								</header>
+								<?php the_content(); ?>
+						  </div>
+						</article>
+					</div>
 
-	<div class="why-foundation">
-		<a href="/kitchen-sink">See what's in Foundation out of the box →</a>
-	</div>
+					<?php endwhile; ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php // END Latest Posts ?>
 
-</section>
+	<?php endif; ?>
+
+	<?php // Restore original Post Data
+	wp_reset_postdata(); ?>
+
+</main>
+
 
 <?php get_footer();
