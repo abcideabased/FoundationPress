@@ -56,3 +56,18 @@ require_once( 'library/gutenberg.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+
+/** Override WooCommerce image sizes */
+require_once( 'library/woocommerce-image-sizes.php' );
+
+/** Declare WooCommerce support */
+require_once( 'library/woocommerce-support.php' );
+
+/** TinyMCE style changes **/
+require_once( 'library/tinymce-styles.php' );
+
+/** Add ACF options pages */
+require_once( 'library/acf-options.php' );
+
+/** Remove type= from <script> and <style> */
+require_once( 'library/remove-type.php') ;
