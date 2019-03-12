@@ -128,7 +128,7 @@ echo '</div>'; ?>
 								<header>
 									<h3 id="post-title-<?php the_ID(); ?>" class="post-title"><?php the_title(); ?></h3>
 								</header>
-								<?php the_content(); ?>
+								<?php the_excerpt(); ?>
 						  </div>
 						</article>
 					</div>
