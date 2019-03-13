@@ -19,3 +19,15 @@
 
   }
 }
+
+a.card-link {
+  display: block;
+  transition: all .3s;
+  color: inherit;
+
+  &:hover {
+    box-shadow: rem-calc(0 40 40) rgba($black,.2);
+    transform: translate(0,rem-calc(-10));
+  }
+
+}
