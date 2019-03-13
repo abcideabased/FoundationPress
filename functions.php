@@ -70,4 +70,16 @@ require_once( 'library/tinymce-styles.php' );
 require_once( 'library/acf-options.php' );
 
 /** Remove type= from <script> and <style> */
-require_once( 'library/remove-type.php') ;
+require_once( 'library/remove-type.php' );
+
+/** Disables enumerating author redirects to improve security */
+require_once( 'library/author-enumeration-disable.php' );
+
+/** Disables the author pages to improve security */
+require_once( 'library/author-pages-disable.php' );
+
+/** Disables the comments RSS feed */
+require_once( 'library/feed-comments-disable.php' );
+
+/** Show 'Nothing Found' for an empty search instead of all posts/pages */
+require_once( 'library/search-empty.php' );
