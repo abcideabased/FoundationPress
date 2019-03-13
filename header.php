@@ -53,7 +53,7 @@
 				 * Mobile Menu
 				 */
 				?>
-				<section class="site-title-bar title-bar" arial-label="Mobile navigation" <?php foundationpress_title_bar_responsive_toggle(); ?> data-hide-for="large">
+				<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?> data-hide-for="large">
 					<div class="title-bar-left">
 						<div class="grid-x grid-padding-x">
 							<div class="cell auto">
@@ -66,14 +66,14 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
 
 				<?php
 				/**
 				 * Desktop/Tablet Menu
 				 */
 				?>
-				<section class="site-navigation top-bar" aria-label="Site navigation">
+				<div class="site-navigation top-bar">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -86,7 +86,7 @@
 							<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 						<?php endif; ?>
 					</nav>
-				</section>
+				</div>
 
 			</header>
 		</div>

@@ -9,7 +9,7 @@ get_header(); ?>
  * Hero
  */
 ?>
-<section class="front-hero full-height" aria-labelledby="hero-title">
+<div class="front-hero full-height" aria-labelledby="hero-title">
 	<div class="reversed full-height">
 		<div class="grid-container full-height">
 			<div class="grid-x full-height align-center-middle">
@@ -24,7 +24,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 <?php // END Hero ?>
 
 <?php // END Top Frame
@@ -39,10 +39,10 @@ echo '</div>'; ?>
 	?>
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-	<section class="intro" aria-labelledby="intro-title">
+	<article <?php post_class('intro'); ?> id="post-<?php the_ID(); ?>">
 		<div class="section-spacing">
 			<div class="grid-container">
-				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
 					<div class="grid-x grid-padding-x grid-padding-y align-center-middle">
 						<div class="cell small-3 medium-5 large-4 text-center medium-text-left">
 							<img src="https://source.unsplash.com/random/1920x1080" alt="" />
@@ -72,10 +72,9 @@ echo '</div>'; ?>
 							<?php do_action( 'foundationpress_page_after_comments' ); ?>
 						</div>
 					</div>
-				</article>
 			</div>
 		</div>
-	</section>
+	</article>
 	<?php endwhile; ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php // END Intro ?>
@@ -109,7 +108,7 @@ echo '</div>'; ?>
 				<div class="grid-x grid-padding-x grid-padding-y align-center align-stretch">
 					<div class="cell reversed">
 						<header>
-							<h2 id="latest-post-title" class="latest-post-title" class="text-center">Latest Posts</h2>
+							<h2 id="latest-post-title" class="latest-post-title text-center">Latest Posts</h2>
 						</header>
 					</div>
 
@@ -118,18 +117,20 @@ echo '</div>'; ?>
 
 					<?php // The content ?>
 					<div class="cell small-8 medium-6 large-4 text-center<?php if($i == $posts_total): ?> hide-for-medium-only<?php endif; ?>">
-						<article <?php post_class('card full-height'); ?> id="post-<?php the_ID(); ?>" aria-labelledby="post-title-<?php the_ID(); ?>">
-							<div class="card-image">
-								<?php if ( has_post_thumbnail( $post->ID ) ) :
-									echo the_post_thumbnail('small');
-								endif; ?>
-							</div>
-						  <div class="card-section">
-								<header>
-									<h3 id="post-title-<?php the_ID(); ?>" class="post-title"><?php the_title(); ?></h3>
-								</header>
-								<?php the_excerpt(); ?>
-						  </div>
+						<article <?php post_class(''); ?> id="post-<?php the_ID(); ?>" aria-labelledby="post-title-<?php the_ID(); ?>">
+							<a class="card card-link full-height" href="<?php the_permalink(); ?>">
+								<div class="card-image">
+									<?php if ( has_post_thumbnail( $post->ID ) ) :
+										echo the_post_thumbnail('small');
+									endif; ?>
+								</div>
+							  <div class="card-section">
+									<header>
+										<h3 id="post-title-<?php the_ID(); ?>" class="post-title"><?php the_title(); ?></h3>
+									</header>
+									<?php the_excerpt(); ?>
+							  </div>
+							</a>
 						</article>
 					</div>
 

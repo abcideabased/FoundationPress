@@ -2,7 +2,7 @@
 // https://github.com/Automattic/_s/blob/master/style.css
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+  position: absolute;
   height: 1px;
   width: 1px;
   overflow: hidden;
@@ -19,13 +19,14 @@
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
-  left: 5px;
+  left: 6px;
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
-  top: 5px;
+  top: 7px;
   width: auto;
   z-index: 100000; // Above WP toolbar.
+  position: fixed;
 }
 
 // Disable outline for skip link elements
