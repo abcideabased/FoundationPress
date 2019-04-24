@@ -6,9 +6,6 @@
  * from searching for login usernames
  */
 
-// Disable access to author page
-add_action('template_redirect', 'disable_author_page');
-
 function disable_author_page() {
 	global $wp_query;
 
@@ -20,4 +17,5 @@ function disable_author_page() {
 	}
 }
 
-add_action( 'template_redirect', 'remove_author_pages_page' );
+// Disable access to author page
+add_action( 'template_redirect', 'disable_author_page' );
