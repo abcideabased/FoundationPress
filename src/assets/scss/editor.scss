@@ -100,9 +100,16 @@ body {
 .wp-block-columns {
   @include xy-grid;
 	@include flex-align(center);
+  margin-left: -#{map-get($grid-column-gutter, small) / 2};
+  margin-right: -#{map-get($grid-column-gutter, small) / 2};
+  @include breakpoint(medium) {
+    margin-left: -#{map-get($grid-column-gutter, medium) / 2};
+    margin-right: -#{map-get($grid-column-gutter, medium) / 2};
+  }
 
   .wp-block-column {
     @include xy-cell();
+		margin-bottom: 0;
   }
 
   &.has-2-columns {
@@ -159,5 +166,4 @@ body {
       }
     }
   }
-
 }
