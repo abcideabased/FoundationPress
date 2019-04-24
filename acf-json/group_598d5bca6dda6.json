@@ -1,0 +1,750 @@
+{
+    "key": "group_598d5bca6dda6",
+    "title": "Company",
+    "fields": [
+        {
+            "key": "field_5cbde55519bf8",
+            "label": "Site Logo",
+            "name": "logo_ID",
+            "type": "image",
+            "instructions": "This logo will be used throughout the site structure.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "svg, png"
+        },
+        {
+            "key": "field_598d6f037a92f",
+            "label": "Search Engine Logo",
+            "name": "company_logo_ID",
+            "type": "image",
+            "instructions": "Resolution max: 151x151<br \/> \r\nUsed on search engines such as Google.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 151,
+            "max_height": 151,
+            "max_size": "",
+            "mime_types": "jpg, png"
+        },
+        {
+            "key": "field_598db0fa1cef7",
+            "label": "Search Engine Photo of Building",
+            "name": "company_image_ID",
+            "type": "image",
+            "instructions": "Resolution max: 200x200<br \/> \r\nUsed on search engines such as Google.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 200,
+            "max_height": 200,
+            "max_size": "",
+            "mime_types": "jpg, png"
+        },
+        {
+            "key": "field_598d75e8b22e6",
+            "label": "Business Type",
+            "name": "schema_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Organization": "Organization",
+                "Store": "Store",
+                "LocalBusiness": "Local Business",
+                "Person": "Person",
+                "Restaurant": "Restaurant"
+            },
+            "default_value": [
+                "LocalBusiness"
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_598d5fe753374",
+            "label": "Address",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_598d5bfc3cc2a",
+            "label": "Street",
+            "name": "address_street",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598d5c933cc2c",
+            "label": "City",
+            "name": "address_locality",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598d5caa3cc2d",
+            "label": "State",
+            "name": "address_region",
+            "type": "text",
+            "instructions": "Use 2 letter code.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. NY",
+            "prepend": "",
+            "append": "",
+            "maxlength": 2
+        },
+        {
+            "key": "field_598d5c233cc2b",
+            "label": "Zip Code",
+            "name": "address_postal",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598d793f20d4a",
+            "label": "Country",
+            "name": "address_country",
+            "type": "text",
+            "instructions": "Use 2 letter code.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. US",
+            "prepend": "",
+            "append": "",
+            "maxlength": 2
+        },
+        {
+            "key": "field_5cc0a9cd8ea7e",
+            "label": "Geographic Coordinates",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Using the address, lookup the geographic coordinates <a href=\"https:\/\/www.gps-coordinates.net\/\" target=\"_blank\">here<\/a> and enter them below.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc0a9848ea7c",
+            "label": "Latitude",
+            "name": "address_lat",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ex. 43.0352913",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cc0a9998ea7d",
+            "label": "Longitude",
+            "name": "address_lng",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ex. -76.1743851",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598d600553375",
+            "label": "Openings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Organization"
+                    },
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_598d63d35337c",
+            "label": "Opening Hours",
+            "name": "opening_hours",
+            "type": "repeater",
+            "instructions": "Open all day: 00:00 - 23:59<br \/>\r\nUsed on search engines such as Google.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_598d63f15337d",
+            "min": 0,
+            "max": 7,
+            "layout": "table",
+            "button_label": "Add Day",
+            "sub_fields": [
+                {
+                    "key": "field_598d63f15337d",
+                    "label": "Days",
+                    "name": "days",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Mo": "Mo",
+                        "Tu": "Tu",
+                        "We": "We",
+                        "Th": "Th",
+                        "Fr": "Fr",
+                        "Sa": "Sa",
+                        "Su": "Su"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_598d64205337e",
+                    "label": "from",
+                    "name": "from",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_598d96b160bcc",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_598d64bd59579",
+                    "label": "to",
+                    "name": "to",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_598d96b160bcc",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_598d96b160bcc",
+                    "label": "Closed",
+                    "name": "closed",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        },
+        {
+            "key": "field_598d6692d5ea5",
+            "label": "Special Days",
+            "name": "special_days",
+            "type": "repeater",
+            "instructions": "Open all day: 00:00 - 23:59<br \/>\r\nUsed on search engines such as Google.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Date",
+            "sub_fields": [
+                {
+                    "key": "field_598d6692d5ea7",
+                    "label": "Date: from",
+                    "name": "date_from",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d.m.Y",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_598d9b07ccb41",
+                    "label": "Date: to",
+                    "name": "date_to",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d.m.Y",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_598d9b14ccb42",
+                    "label": "Time: from",
+                    "name": "time_from",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_598d9b53ccb43",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_598d6692d5ea8",
+                    "label": "Time: to",
+                    "name": "time_to",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_598d9b53ccb43",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_598d9b53ccb43",
+                    "label": "Closed",
+                    "name": "closed",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        },
+        {
+            "key": "field_598d6cb0f5324",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_598da40b04a1e",
+            "label": "Main Phone",
+            "name": "company_phone",
+            "type": "text",
+            "instructions": "Use numbers only",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "+1",
+            "append": "",
+            "maxlength": 10
+        },
+        {
+            "key": "field_5cc06f16a4786",
+            "label": "Main Fax",
+            "name": "company_fax",
+            "type": "text",
+            "instructions": "Use numbers only",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "+1",
+            "append": "",
+            "maxlength": 10
+        },
+        {
+            "key": "field_5cc06f59a4787",
+            "label": "Main Email",
+            "name": "company_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_598d6c63f5323",
+            "label": "Contact",
+            "name": "contact",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_598d6ce7f5325",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Contact",
+            "sub_fields": [
+                {
+                    "key": "field_598d6ce7f5325",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "customer support": "customer support",
+                        "technical support": "technical support",
+                        "billing support": "billing support",
+                        "bill payment": "bill payment",
+                        "sales": "sales",
+                        "reservations": "reservations",
+                        "credit card support": "credit card support",
+                        "emergency": "emergency",
+                        "baggage tracking": "baggage tracking",
+                        "roadside assistance": "roadside assistance",
+                        "package tracking": "package tracking"
+                    },
+                    "default_value": [
+                        "customer support"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_598d6e4df5326",
+                    "label": "Phone",
+                    "name": "phone",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "+1",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_598d7d73f5e83",
+                    "label": "Option",
+                    "name": "option",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "HearingImpairedSupported": "Hearing Impaired Supported",
+                        "TollFree": "Toll Free"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Used on the 'Site Settings' page.",
+    "modified": 1556132986
+}
