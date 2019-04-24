@@ -14,7 +14,7 @@
 
 // Page header
 .front-hero {
-  background-color: $primary-color;
+  background-color: darken($primary-color, 15%);
   background-image: url("https://source.unsplash.com/random/1920x1080");
   background-attachment: fixed;
   background-size: cover;
