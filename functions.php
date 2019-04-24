@@ -83,3 +83,24 @@ require_once( 'library/feed-comments-disable.php' );
 
 /** Show 'Nothing Found' for an empty search instead of all posts/pages */
 require_once( 'library/search-empty.php' );
+
+/** Gravity forms in ACF */
+require_once( 'library/acf-gravity-forms.php' );
+
+/** Remove attachment pages and don't allow attachments in content to link */
+require_once( 'library/attachment-pages-remove.php' );
+
+/** Remove comments */
+require_once( 'library/comments-remove.php' );
+
+/** Format phone numbers */
+require_once( 'library/phone-format.php' );
+
+/** Enable Excerpts on Pages */
+add_post_type_support( 'page', 'excerpt' );
+
+/** Functions to inline SVGs and enable lazy loading */
+require_once( 'library/attachment-functions.php' );
+
+/** Add schema.org markup in JSON-LD format using ACF */
+require_once( 'library/schema.php' );
