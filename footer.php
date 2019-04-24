@@ -51,7 +51,8 @@
           </nav>
         </div>
         <div class="cell medium-auto medium-offset-1 text-center medium-order-1">
-          &copy; <?php echo date('Y', strtotime("+3 months")); ?> <?php bloginfo('name'); ?>
+          &copy; <?php echo date('Y', strtotime("+2 months")); ?> <?php bloginfo('name'); ?> &bull;
+          <span class="social-links"><?php get_template_part( 'template-parts/social', 'links' ); ?></span>
         </div>
       </div>
     </div>
