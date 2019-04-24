@@ -26,7 +26,9 @@
   ],
   "dependencies": {
     "foundation-sites": "6.4.3",
+    "intersection-observer": "^0.5.1",
     "jquery": "~3.0.0",
+    "lozad": "^1.9.0",
     "motion-ui": "^2.0.3",
     "what-input": "^4.1.3"
   },
