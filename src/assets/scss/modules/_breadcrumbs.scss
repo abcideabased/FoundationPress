@@ -1,0 +1,18 @@
+// Full width template
+.main-breadcrumb-full-width {
+  @include xy-cell(12);
+  @include breakpoint(large) {
+    @include xy-cell(10);
+  }
+}
+
+// Default template
+.main-breadcrumb {
+  @include breakpoint(small) {
+    @include xy-cell(12);
+  }
+
+  @include breakpoint(medium) {
+    @include xy-cell(12);
+  }
+}

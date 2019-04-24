@@ -104,3 +104,6 @@ require_once( 'library/attachment-functions.php' );
 
 /** Add schema.org markup in JSON-LD format using ACF */
 require_once( 'library/schema.php' );
+
+/** Add breadcrumbs */
+require_once( 'library/breadcrumbs.php' );

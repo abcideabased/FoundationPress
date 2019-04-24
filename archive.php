@@ -19,6 +19,12 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
+
+		<?php // If breadcrumbs are unused hide visually rather than removing it ?>
+		<div class="main-breadcrumb">
+		  <?php site_breadcrumbs(); ?>
+		</div>
+
 		<main id="content" class="main-content" tabindex="-1">
 		<?php if ( have_posts() ) : ?>
 
