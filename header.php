@@ -44,6 +44,11 @@
 		/**
 		 * Site Header
 		 */
+
+		// Vars
+		$logo_ID = get_field('logo_ID','option');
+		$logo_size = array('',60);
+		$logo = get_the_image($logo_ID,$logo_size);
 		?>
 		<div class="header-sticky-container" data-sticky-container>
 			<header id="header" class="site-header sticky" data-sticky data-options="marginTop:0;">
@@ -58,7 +63,14 @@
 						<div class="grid-x grid-padding-x">
 							<div class="cell auto">
 								<span class="site-mobile-title title-bar-title">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+										<?php if($logo_ID): ?>
+											<span class="show-for-sr">Home</span>
+											<?php echo $logo; ?>
+										<?php else: ?>
+											<?php bloginfo( 'name' ); ?>
+										<?php endif; ?>
+									</a>
 								</span>
 							</div>
 							<div class="cell shrink">
@@ -76,7 +88,14 @@
 				<div class="site-navigation top-bar">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php if($logo_ID): ?>
+									<span class="show-for-sr">Home</span>
+									<?php echo $logo; ?>
+								<?php else: ?>
+									<?php bloginfo( 'name' ); ?>
+								<?php endif; ?>
+							</a>
 						</div>
 					</div>
 					<nav id="menu" class="top-bar-right" aria-label="Main menu" tabindex="-1">
