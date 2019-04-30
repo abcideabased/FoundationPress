@@ -151,6 +151,9 @@
   @include breakpoint(medium down) {
     padding: 0; // prevents container visibility on medium and down screens
   }
+  @include breakpoint(large) {
+    padding: 0 1rem;
+  }
 }
 
 // WP post navigation
