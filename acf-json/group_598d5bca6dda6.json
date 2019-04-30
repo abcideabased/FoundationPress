@@ -121,6 +121,93 @@
             "placeholder": ""
         },
         {
+            "key": "field_5cc7556a0f44a",
+            "label": "Price Range",
+            "name": "price_range",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Organization"
+                    },
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "$": "$ = Inexpensive",
+                "$$": "$$ = Moderately Expensive",
+                "$$$": "$$$ = Expensive",
+                "$$$$": "$$$$ = Very Expensive"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cc75ee859a70",
+            "label": "Cuisine",
+            "name": "cuisines",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "==",
+                        "value": "Restaurant"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Cruisine",
+            "sub_fields": [
+                {
+                    "key": "field_5cc75fdc59a71",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_598d5fe753374",
             "label": "Address",
             "name": "",
@@ -238,7 +325,20 @@
             "type": "message",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Organization"
+                    },
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -255,7 +355,20 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Organization"
+                    },
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -274,7 +387,20 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Organization"
+                    },
+                    {
+                        "field": "field_598d75e8b22e6",
+                        "operator": "!=",
+                        "value": "Person"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -746,5 +872,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Used on the 'Site Settings' page.",
-    "modified": 1556132986
+    "modified": 1556570983
 }

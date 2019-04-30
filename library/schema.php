@@ -1,13 +1,14 @@
 <?php
 if(get_field('schema_type', 'options')) {
-  add_action('wp_head', function() {
-      $schema = array(
-      '@context'  => "http://schema.org",
-      '@type'     => get_field('schema_type', 'options'),
-      'name'      => get_bloginfo('name'),
-      'url'       => get_home_url(),
-      'slogan'    => get_bloginfo('description')
-  	);
+  add_action('wp_footer', function() {
+
+    $schema['@context'] = "http://schema.org";
+    $schema['@type'] = get_field('schema_type', 'options');
+    $schema['name'] = get_bloginfo('name');
+    $schema['url'] = get_home_url();
+    if(get_field('schema_type', 'option') != 'Person') {
+      $schema['slogan'] = get_bloginfo('description');
+    }
 
     // Address
     if(get_field('address_street', 'option')) {
@@ -22,12 +23,15 @@ if(get_field('schema_type', 'options')) {
     }
 
     // Geo Location
-    if(get_field('address_lat', 'option') || get_field('address_lng', 'option')) {
-      $schema['geo'] = array(
-        '@type'      => 'GeoCoordinates',
-        'latitude'   => get_field('address_lat', 'option'),
-        'longitude'  => get_field('address_lng', 'option')
-      );
+    if(get_field('schema_type', 'option') != 'Organization' && get_field('schema_type', 'option') != 'Person') {
+      if(get_field('address_lat', 'option')
+        || get_field('address_lng', 'option')) {
+        $schema['geo'] = array(
+          '@type'      => 'GeoCoordinates',
+          'latitude'   => get_field('address_lat', 'option'),
+          'longitude'  => get_field('address_lng', 'option')
+        );
+      }
     }
 
     // Email
@@ -46,13 +50,30 @@ if(get_field('schema_type', 'options')) {
     }
 
     // Logo
-    if (get_field('company_logo_ID', 'option')) {
-        $schema['logo'] = wp_get_attachment_image_url(get_field('company_logo_ID', 'option'), 'full');
+    if(get_field('schema_type', 'option') != 'Person') {
+      if (get_field('company_logo_ID', 'option')) {
+          $schema['logo'] = wp_get_attachment_image_url(get_field('company_logo_ID', 'option'), 'full');
+      }
     }
 
     // Image
     if (get_field('company_image_ID', 'option')) {
         $schema['image'] = wp_get_attachment_image_url(get_field('company_image_ID', 'option'), 'full');
+    }
+
+    // Price Range
+    if(get_field('schema_type', 'option') != 'Organization' && get_field('schema_type', 'option') != 'Person') {
+      if (get_field('price_range', 'option')) {
+        $schema['priceRange'] = get_field('price_range', 'option');
+      }
+    }
+
+    // Cuisine
+    if(get_field('schema_type', 'option') == 'Restaurant') {
+        $schema['servesCuisine'] = array();
+        while (have_rows('cuisines', 'options')) : the_row();
+        array_push($schema['servesCuisine'], get_sub_field('type'));
+        endwhile;
     }
 
     // Social Media
@@ -98,38 +119,40 @@ if(get_field('schema_type', 'options')) {
     } // endif, social media
 
     // Opening Hours
-    if (have_rows('opening_hours', 'option')) {
-        $schema['openingHoursSpecification'] = array();
-        while (have_rows('opening_hours', 'option')) : the_row();
-            $closed = get_sub_field('closed');
-            $from   = $closed ? '00:00' : get_sub_field('from');
-            $to     = $closed ? '00:00' : get_sub_field('to');
-            $openings = array(
-                '@type'     => 'OpeningHoursSpecification',
-                'dayOfWeek' => get_sub_field('days'),
-                'opens'     => $from,
-                'closes'    => $to
-            );
-            array_push($schema['openingHoursSpecification'], $openings);
-        endwhile;
-        /// VACATIONS / HOLIDAYS
-        if (have_rows('special_days', 'option')) {
-            while (have_rows('special_days', 'option')) : the_row();
-                $closed    = get_sub_field('closed');
-                $date_from = get_sub_field('date_from');
-                $date_to   = get_sub_field('date_to');
-                $time_from = $closed ? '00:00' : get_sub_field('time_from');
-                $time_to   = $closed ? '00:00' : get_sub_field('time_to');
-                $special_days = array(
-                    '@type'        => 'OpeningHoursSpecification',
-                    'validFrom'    => $date_from,
-                    'validThrough' => $date_to,
-                    'opens'        => $time_from,
-                    'closes'       => $time_to
-                );
-                array_push($schema['openingHoursSpecification'], $special_days);
-            endwhile;
-        }
+    if(get_field('schema_type', 'option') != 'Organization' && get_field('schema_type', 'option') != 'Person') {
+      if (have_rows('opening_hours', 'option')) {
+          $schema['openingHoursSpecification'] = array();
+          while (have_rows('opening_hours', 'option')) : the_row();
+              $closed = get_sub_field('closed');
+              $from   = $closed ? '00:00' : get_sub_field('from');
+              $to     = $closed ? '00:00' : get_sub_field('to');
+              $openings = array(
+                  '@type'     => 'OpeningHoursSpecification',
+                  'dayOfWeek' => get_sub_field('days'),
+                  'opens'     => $from,
+                  'closes'    => $to
+              );
+              array_push($schema['openingHoursSpecification'], $openings);
+          endwhile;
+          /// VACATIONS / HOLIDAYS
+          if (have_rows('special_days', 'option')) {
+              while (have_rows('special_days', 'option')) : the_row();
+                  $closed    = get_sub_field('closed');
+                  $date_from = get_sub_field('date_from');
+                  $date_to   = get_sub_field('date_to');
+                  $time_from = $closed ? '00:00' : get_sub_field('time_from');
+                  $time_to   = $closed ? '00:00' : get_sub_field('time_to');
+                  $special_days = array(
+                      '@type'        => 'OpeningHoursSpecification',
+                      'validFrom'    => $date_from,
+                      'validThrough' => $date_to,
+                      'opens'        => $time_from,
+                      'closes'       => $time_to
+                  );
+                  array_push($schema['openingHoursSpecification'], $special_days);
+              endwhile;
+          }
+      }
     }
 
     // Contact Points
