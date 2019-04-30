@@ -64,8 +64,8 @@
 							<div class="cell auto">
 								<span class="site-mobile-title title-bar-title">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+										<span class="show-for-sr">Home: </span>
 										<?php if($logo_ID): ?>
-											<span class="show-for-sr">Home</span>
 											<?php echo $logo; ?>
 										<?php else: ?>
 											<?php bloginfo( 'name' ); ?>
@@ -89,8 +89,8 @@
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<span class="show-for-sr">Home: </span>
 								<?php if($logo_ID): ?>
-									<span class="show-for-sr">Home</span>
 									<?php echo $logo; ?>
 								<?php else: ?>
 									<?php bloginfo( 'name' ); ?>
