@@ -15,4 +15,10 @@
   @include breakpoint(medium) {
     @include xy-cell(12);
   }
+
+  .main-grid.sidebar-left & {
+    @include breakpoint(medium) {
+      @include xy-cell-offset(4);
+    }
+  }
 }
