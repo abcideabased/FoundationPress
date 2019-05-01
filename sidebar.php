@@ -8,5 +8,7 @@
 
 ?>
 <aside class="sidebar">
-	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+	<div class="sticky">
+		<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+	</div>
 </aside>

@@ -56,5 +56,10 @@
       padding-top: 1rem;
     }
 
+    .sticky {
+      position: sticky;
+      top: rem-calc(120);
+    }
+
   }
 }
