@@ -52,13 +52,13 @@ if(get_field('schema_type', 'options')) {
     // Logo
     if(get_field('schema_type', 'option') != 'Person') {
       if (get_field('company_logo_ID', 'option')) {
-          $schema['logo'] = wp_get_attachment_image_url(get_field('company_logo_ID', 'option'), 'full');
+          $schema['logo'] = wp_get_attachment_image_url(get_field('company_logo_ID', 'option'), 'xlarge');
       }
     }
 
     // Image
     if (get_field('company_image_ID', 'option')) {
-        $schema['image'] = wp_get_attachment_image_url(get_field('company_image_ID', 'option'), 'full');
+        $schema['image'] = wp_get_attachment_image_url(get_field('company_image_ID', 'option'), 'xlarge');
     }
 
     // Price Range

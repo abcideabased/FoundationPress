@@ -31,7 +31,7 @@
             "label": "Search Engine Logo",
             "name": "company_logo_ID",
             "type": "image",
-            "instructions": "Resolution max: 151x151<br \/> \r\nUsed on search engines such as Google.",
+            "instructions": "Used on search engines such as Google.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -50,13 +50,13 @@
             "return_format": "id",
             "preview_size": "thumbnail",
             "library": "uploadedTo",
-            "min_width": "",
-            "min_height": "",
+            "min_width": 160,
+            "min_height": 90,
             "min_size": "",
-            "max_width": 151,
-            "max_height": 151,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
-            "mime_types": "jpg, png"
+            "mime_types": "jpg, png, gif"
         },
         {
             "key": "field_598db0fa1cef7",
@@ -82,13 +82,13 @@
             "return_format": "id",
             "preview_size": "thumbnail",
             "library": "uploadedTo",
-            "min_width": "",
-            "min_height": "",
+            "min_width": 160,
+            "min_height": 90,
             "min_size": "",
-            "max_width": 200,
-            "max_height": 200,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
-            "mime_types": "jpg, png"
+            "mime_types": "jpg, png, gif"
         },
         {
             "key": "field_598d75e8b22e6",
@@ -872,5 +872,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Used on the 'Site Settings' page.",
-    "modified": 1556570983
+    "modified": 1556643951
 }
