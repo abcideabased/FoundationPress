@@ -1,5 +1,5 @@
 <?php
-if( function_exists('acf_add_options_page') ) {
+if( class_exists('acf') ) {
   if(get_field('schema_type', 'options')) {
     add_action('wp_footer', function() {
 
