@@ -71,6 +71,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
  				'theme_location' => 'privacy-nav',
  				'depth'          => 1,
  				'fallback_cb'    => false,
+				'walker'         => new Foundationpress_Privacy_Walker(),
  			)
  		);
  	}
