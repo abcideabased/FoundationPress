@@ -9,5 +9,6 @@ import Foundation from 'foundation-sites';
 //import './lib/foundation-explicit-pieces';
 import './lib/interchange-retina-sizes';
 import './lib/lazyload';
+import './lib/cookies-notice';
 
 $(document).foundation();

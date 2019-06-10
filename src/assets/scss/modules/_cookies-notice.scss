@@ -1,0 +1,40 @@
+.cookies-notice {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: rem-calc(30);
+  border-radius: rem-calc(6);
+  background-color: lighten($black,3%);
+  color: darken($white,5%);
+  font-size: rem-calc(13);
+  max-width: rem-calc(315);
+  padding: 1rem 1.5rem;
+  box-shadow: rem-calc(0 0 20) rgba($black,.4);
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+  @include mui-animation(fade(in));
+  animation-duration: .4s;
+
+  .button {
+    margin-bottom: 0;
+
+    &.dark {
+      background-color: lighten($black,30%);
+
+      &:hover, &:focus {
+        background-color: lighten($black, 50%);
+      }
+    }
+  }
+
+  .close-button {
+    color: lighten($black,30%);
+
+    &:hover, &:focus {
+      color: lighten($black, 50%);
+    }
+  }
+
+}
