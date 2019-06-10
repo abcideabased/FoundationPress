@@ -33,6 +33,25 @@
 			<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 		<?php endif; ?>
 
+		<?php
+		/**
+		 * Cookies Notice
+		 */
+		?>
+		<section id="cookies-notice" class="cookies-notice" aria-label="Cookies Notice" data-closable tabindex="-1">
+		  <header>
+		    <h2 class="h5">Cookies</h2>
+		  </header>
+		  <p>We use cookies and related technologies to personalize and enhance your experience. By using this site you agree to the use of cookies and related tracking technologies.</p>
+		  <button id="dismiss-cookies" class="small primary button" data-close>Dismiss</button>
+		  <?php if(get_privacy_policy_url()): ?>
+		    <a class="small dark button" href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a>
+		  <?php endif; ?>
+		  <button id="dismiss-cookies-close" class="close-button" aria-label="Dismiss alert" data-close>
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</section>
+
 
 		<?php // Front top frame
 		if ( is_page_template( 'page-templates/front.php' ) ) {
