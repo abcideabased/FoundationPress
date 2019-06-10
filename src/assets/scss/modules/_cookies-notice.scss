@@ -21,6 +21,11 @@
   .button {
     margin-bottom: 0;
 
+    &:focus {
+      outline: solid $white rem-calc(4);
+      @include disable-mouse-outline;
+    }
+
     &.dark {
       background-color: lighten($black,30%);
 
