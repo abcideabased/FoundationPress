@@ -1,5 +1,6 @@
 $(function() {
 
+  // Apply keyboard interaction to buttons
 	function a11yClick(event){
     if(event.type === 'click'){
         return true;
@@ -24,8 +25,11 @@ $(function() {
 	$('#dismiss-cookies, #dismiss-cookies-close').on('click keypress', function(event){
 		if(a11yClick(event) === true){
 			localStorage.setItem('cookies-notice','dismissed');
-			$('#cookies-notice').hide();
-      $('#cookies-notice-close').hide();
+			$('#cookies-notice').animate({
+        opacity: 0,
+      }, 400, function() {
+        // Animation complete.
+      });
 		}
 	});
 
