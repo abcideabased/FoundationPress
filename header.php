@@ -38,7 +38,7 @@
 		 * Cookies Notice
 		 */
 		?>
-		<section id="cookies-notice" class="cookies-notice" aria-label="Cookies Notice" data-closable tabindex="-1">
+		<section id="cookies-notice" class="cookies-notice" aria-label="Cookies Notice" data-closable>
 		  <header>
 		    <h2 class="h5">Cookies</h2>
 		  </header>
