@@ -16,18 +16,29 @@ $(function() {
     }
 	}
 
+	// Vars
+	var cookiesNoticeID = '#cookies-notice';
+	var cookiesNoticeStorageName = 'cookies-notice';
+	var cookiesNoticeStorageValue = 'dismissed';
+	var cookiesNoticeDismissIDs = '#dismiss-cookies, #dismiss-cookies-close';
+	var cookiesNoticeAnimateSpeed = 400;
+
   // check local storage for cookie acceptance on load, if not present show cookies notice
-	if ( localStorage.getItem('cookies-notice') != 'dismissed' ) {
-		$('#cookies-notice').show();
+	if ( localStorage.getItem(cookiesNoticeStorageName) != cookiesNoticeStorageValue ) {
+		$(cookiesNoticeID).animate({
+			opacity: 1,
+		}, cookiesNoticeAnimateSpeed, function() {
+			// Animation complete.
+		});
 	}
 
 	// set local storage cookie acceptance
-	$('#dismiss-cookies, #dismiss-cookies-close').on('click keypress', function(event){
+	$(cookiesNoticeDismissIDs).on('click keypress', function(event){
 		if(a11yClick(event) === true){
-			localStorage.setItem('cookies-notice','dismissed');
-			$('#cookies-notice').animate({
+			localStorage.setItem(cookiesNoticeStorageName,cookiesNoticeStorageValue);
+			$(cookiesNoticeID).animate({
         opacity: 0,
-      }, 400, function() {
+      }, cookiesNoticeAnimateSpeed, function() {
         // Animation complete.
       });
 		}

@@ -1,5 +1,5 @@
 .cookies-notice {
-  display: none;
+  opacity: 0;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -15,8 +15,10 @@
   @include breakpoint(small only) {
     text-align: center;
   }
-  @include mui-animation(fade(in));
-  animation-duration: .4s;
+
+  html.no-js & {
+    opacity: 1;
+  }
 
   .button {
     margin-bottom: 0;
