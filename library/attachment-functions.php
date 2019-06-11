@@ -119,11 +119,9 @@ function is_svg($attachment_id) {
  * Get the SVG as code
  * @return string the raw SVG code
  */
-function get_svg($attachment_id,$size = 'thumbnail', $icon = false) {
-  $attachment_url = get_the_image_url($attachment_id,$size,$icon);
+function get_svg($attachment_id) {
   // Get relative URL so the server finds it by file path instead of URL path
   // Really helpful when moving a site and editing your HOSTS file
-  //$path_to_file = substr(ABSPATH, 0, -1) . wp_make_link_relative( $attachment_url );
   $path_to_file = get_attached_file($attachment_id);
   return file_get_contents($path_to_file);
 }
