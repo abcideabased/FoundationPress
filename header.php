@@ -92,9 +92,11 @@
 									</a>
 								</span>
 							</div>
-							<div class="cell shrink">
-								<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-							</div>
+							<?php if(has_nav_menu('mobile-nav')): ?>
+								<div class="cell shrink">
+									<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+								</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
