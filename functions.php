@@ -91,9 +91,6 @@ require_once( 'library/acf-gravity-forms.php' );
 /** Remove attachment pages and don't allow attachments in content to link */
 require_once( 'library/attachment-pages-remove.php' );
 
-/** Remove comments */
-require_once( 'library/comments-remove.php' );
-
 /** Format phone numbers */
 require_once( 'library/phone-format.php' );
 
@@ -108,3 +105,9 @@ require_once( 'library/schema.php' );
 
 /** Add breadcrumbs */
 require_once( 'library/breadcrumbs.php' );
+
+/** Remove comments */
+//require_once( 'library/comments-remove.php' );
+
+/** Remove post content type */
+//require_once( 'library/post-remove.php' );
