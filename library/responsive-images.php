@@ -61,17 +61,17 @@ function foundationpress_adjust_image_sizes_attr( $sizes, $size ) {
 	// Actual width of image
 	$width = $size[0];
 	// Full width page template
-	if ( is_page_template( 'page-templates/page-full-width.php' ) ) {
-		if ( 1200 < $width ) {
-			$sizes = '(max-width: 1199px) 98vw, 1200px';
-		} else {
-			$sizes = '(max-width: 1199px) 98vw, ' . $width . 'px';
-		}
-	} else { // Default 3/4 column post/page layout
-		if ( 770 < $width ) {
+	if ( is_page_template( 'page-templates/page-sidebar-left.php' ) || is_page_template( 'page-templates/page-sidebar-right.php' ) ) {
+    if ( 770 < $width ) {
 			$sizes = '(max-width: 639px) 98vw, (max-width: 1199px) 64vw, 770px';
 		} else {
 			$sizes = '(max-width: 639px) 98vw, (max-width: 1199px) 64vw, ' . $width . 'px';
+		}
+	} else { // Default 3/4 column post/page layout
+    if ( 1200 < $width ) {
+			$sizes = '(max-width: 1199px) 98vw, 1200px';
+		} else {
+			$sizes = '(max-width: 1199px) 98vw, ' . $width . 'px';
 		}
 	}
 	return $sizes;
