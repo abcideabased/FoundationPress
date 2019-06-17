@@ -13,7 +13,7 @@
  */
 // Set whether lazy load is active
 function lazy_active() {
-  return false; // Switch to true to enable lazy loading
+  return true; // Switch to true to enable lazy loading
 }
 // Set the placeholder for the <img> src
 function get_lazy_placeholder() {
@@ -31,6 +31,14 @@ function get_lazy_class() {
 function get_the_lazy_image( $attachment_id, $size = 'thumbnail', $icon = false, $attr = '' ) {
     $lazyClass = get_lazy_class();
     $html  = '';
+
+    $lqip_mime_type = get_post_mime_type($attachment_id);
+    $lqip_url = wp_get_attachment_image_url($attachment_id, 'lqip', $icon);
+    $lqip_local_path = substr(ABSPATH, 0, -1) . wp_make_link_relative( $lqip_url );
+    $lqip_contents = file_get_contents($lqip_local_path);
+    $lqip_base64_content = base64_encode($lqip_contents);
+    $lqip_base64 = 'data:' . $lqip_mime_type . ';base64,' . $lqip_base64_content;
+
 
     // Noscript the original image
     $html = '<noscript><span class="lazy-no-js">' . wp_get_attachment_image( $attachment_id, $size, $icon, $attr ) . '</span></noscript>';
@@ -238,6 +246,11 @@ function get_the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr 
 
   } else {
     if(!lazy_active()) {
+      if(filesize( wp_get_attachment_image_url( $attachment_id ) > 5120 )) {
+        // @TODO: Load as base64
+      } else {
+
+      }
       return wp_get_attachment_image($attachment_id,$size,$icon,$attr);
     } else {
       return get_the_lazy_image($attachment_id,$size,$icon,$attr);

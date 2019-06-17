@@ -1,0 +1,15 @@
+.lazy {
+
+  &:not(.is-loaded) {
+    opacity: 0;
+  }
+
+  &, &.is-loaded {
+    transition: opacity .3s;
+  }
+
+  html.no-js &, &.is-loaded {
+    opacity: 1;
+  }
+
+}

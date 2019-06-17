@@ -36,6 +36,9 @@ echo '</div>'; ?>
 	/**
 	 * Intro
 	 */
+
+	$image_id = get_field('image');
+	$image = get_the_image($image_id,'small', false, array('class' => 'lazy'));
 	?>
 	<?php do_action( 'foundationpress_before_content' ); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -45,7 +48,7 @@ echo '</div>'; ?>
 
 					<div class="grid-x grid-padding-x grid-padding-y align-center-middle">
 						<div class="cell small-3 medium-5 large-4 text-center medium-text-left">
-							<img src="https://source.unsplash.com/random/1920x1080" alt="" />
+
 
 						</div>
 						<div class="cell medium-7 large-8 text-center medium-text-left">
@@ -146,6 +149,7 @@ echo '</div>'; ?>
 	<?php // Restore original Post Data
 	wp_reset_postdata(); ?>
 
+<?php echo $image; ?>
 </main>
 
 
