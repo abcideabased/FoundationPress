@@ -106,6 +106,9 @@ require_once( 'library/schema.php' );
 /** Add breadcrumbs */
 require_once( 'library/breadcrumbs.php' );
 
+/** Change dashboard widgets */
+require_once( 'library/dashboard-widgets.php' );
+
 /** Remove comments */
 //require_once( 'library/comments-remove.php' );
 
