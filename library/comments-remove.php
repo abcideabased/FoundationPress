@@ -53,3 +53,34 @@ function remove_comments_admin_bar(){
         $wp_admin_bar->remove_menu('comments');
 }
 add_action( 'wp_before_admin_bar_render', 'remove_comments_admin_bar' );
+
+// Remove comments from At a Glance
+add_action( 'do_meta_boxes', 'custom_do_meta_boxes', 99, 2 );
+
+function custom_do_meta_boxes( $screen, $place )
+{
+    if( 'dashboard' === $screen && 'normal' === $place )
+    {
+        add_filter( 'wp_count_comments', 'custom_wp_count_comments' );
+    }
+}
+
+function custom_wp_count_posts( $stats )
+{
+    static $filter_posts = 0;
+    if( 1 === $filter_posts )
+        remove_filter( current_filter(), __FUNCTION__ );
+
+    $filter_posts++;
+    return null;
+}
+
+function custom_wp_count_comments( $stats )
+{
+    static $filter_comments = 0;
+    if( 1 === $filter_comments )
+        remove_filter( current_filter(), __FUNCTION__ );
+
+    $filter_comments++;
+    return array( 'total_comments' => 0 );
+}
