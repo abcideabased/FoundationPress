@@ -25,6 +25,11 @@ $(function() {
 
   // check local storage for cookie acceptance on load, if not present show cookies notice
 	if ( localStorage.getItem(cookiesNoticeStorageName) != cookiesNoticeStorageValue ) {
+
+		// Display popup
+		$(cookiesNoticeID).css('display','block');
+
+		// Animate popup
 		$(cookiesNoticeID).animate({
 			opacity: 1,
 		}, cookiesNoticeAnimateSpeed, function() {

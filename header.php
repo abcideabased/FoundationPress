@@ -40,7 +40,7 @@
 		?>
 		<section id="cookies-notice" class="cookies-notice" aria-label="Cookies Notice" data-closable>
 		  <header>
-		    <h2 class="h5">Cookies</h2>
+		    <h2 class="cookies-title h5">Cookies</h2>
 		  </header>
 		  <p>We use cookies and related technologies to personalize and enhance your experience. By using this site you agree to the use of cookies and related tracking technologies.</p>
 		  <button id="dismiss-cookies" class="small primary button" data-close>Dismiss</button>

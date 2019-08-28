@@ -1,4 +1,5 @@
 .cookies-notice {
+  display: none;
   opacity: 0;
   position: fixed;
   bottom: 0;
@@ -18,6 +19,10 @@
 
   html.no-js & {
     opacity: 1;
+  }
+
+  .cookies-title {
+    color: $white;
   }
 
   .button {
