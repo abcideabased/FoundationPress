@@ -7,12 +7,12 @@
  * @since FoundationPress 2.6.0
  */
 // Add additional image sizes
-add_image_size( 'thumbnail', 150 );
-add_image_size( 'xsmall', 300 );
-add_image_size( 'small', 640 );
-add_image_size( 'medium', 1024 );
-add_image_size( 'large', 1200 );
-add_image_size( 'xlarge', 1920 );
+add_image_size( 'thumbnail', 150, 150 );
+add_image_size( 'xsmall', 300, 300 );
+add_image_size( 'small', 640, 640 );
+add_image_size( 'medium', 1024, 1024 );
+add_image_size( 'large', 1200, 1200 );
+add_image_size( 'xlarge', 1920, 1920 );
 // Remove medium large srcset image
 add_filter('intermediate_image_sizes', function($sizes) {
     return array_diff($sizes, ['medium_large']);
