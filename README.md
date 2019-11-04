@@ -1,23 +1,6 @@
-# DEPRECATED
-This project will no longer be maintained. As Zurb Foundation is [no longer in active development ](https://github.com/foundation/foundation-sites/issues/11767), I would recommend that you base your front-end code on another framework, such as [Semantic UI](https://semantic-ui.com) or [Bootstrap](https://getbootstrap.com).
-
-To all of you who have contributed to FoundationPress over the years:
-**Thank you!**
-
-– Ole Fredrik
-
-
 # FoundationPress
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![GitHub version](https://badge.fury.io/gh/olefredrik%2Ffoundationpress.svg)](https://github.com/olefredrik/FoundationPress/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 This is a starter-theme for WordPress based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html), the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
-
-Please fork, copy, modify, delete, share or do whatever you like with this.
-
-All contributions are welcome!
 
 ## Requirements
 
@@ -110,11 +93,6 @@ If you need to output additional JavaScript files separate from `app.js`, do the
 * Build (`npm start`)
 * You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
 
-## Demo
-
-* [Clean FoundationPress install](http://foundationpress.olefredrik.com/)
-* [FoundationPress Kitchen Sink - see every single element in action](http://foundationpress.olefredrik.com/kitchen-sink/)
-
 ## Local Development
 We recommend using one of the following setups for local WordPress development:
 
@@ -128,7 +106,6 @@ We recommend using one of the following setups for local WordPress development:
 
 ## Tutorials
 
-* [FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners/)
 * [Responsive images in WordPress with Interchange](http://rachievee.com/responsive-images-in-wordpress/)
 * [Learn to use the _settings file to change almost every aspect of a Foundation site](http://zurb.com/university/lessons/66)
 * [Other lessons from Zurb University](http://zurb.com/university/past-lessons)
@@ -137,45 +114,3 @@ We recommend using one of the following setups for local WordPress development:
 
 * [Zurb Foundation Docs](http://foundation.zurb.com/docs/)
 * [WordPress Codex](http://codex.wordpress.org/)
-
-## Showcase
-
-* [Harvard Center for Green Buildings and Cities](http://www.harvardcgbc.org/)
-* [The New Tropic](http://thenewtropic.com/)
-* [Parent-Child Home Program](http://www.parent-child.org/)
-* [Hip and Healthy](http://hipandhealthy.com/)
-* [Franchise Career Advisors](http://franchisecareeradvisors.com/)
-* [Maren Schmidt](http://marenschmidt.com/)
-* [Finnerodja](http://www.finnerodja.se/)
-* [WP Diamonds](http://www.wpdiamonds.com/)
-* [Storm Arts](http://stormarts.fi/)
-* [ProfitGym](http://profitgym.nl/)
-* [Agritur Piasina](http://www.agriturpiasina.it/)
-* [Byington Vineyard & Winery](https://byington.com/)
-* [Show And Tell](http://www.showandtelluk.com/)
-* [Wahl + Case](https://www.wahlandcase.com/)
-* [Morgridge Institute for Research](https://morgridge.org)
-* [Impeach Trump Now](https://impeachdonaldtrumpnow.org/)
-* [La revanche des sites](https://www.la-revanche-des-sites.fr/)
-* [Dyami Wilson](https://dyamiwilson.com)
-* [Madico Solutions](https://madico.com)
-
->Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/olefredrik)
-
-## Contributing
-#### Here are ways to get involved:
-
-1. [Star](https://github.com/olefredrik/FoundationPress/stargazers) the project!
-2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/FoundationPress/issues)
-3. Report a bug that you find
-4. Share a theme you've built on top of FoundationPress
-5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffoundationpress.olefredrik.com%2F&text=Check%20out%20FoundationPress%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ffoundationpress.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-foundationpress-a-wordpress-starter-theme-106/) your experience of FoundationPress.
-
-#### Pull Requests
-
-Pull requests are highly appreciated. Please follow these guidelines:
-
-1. Solve a problem. Features are great, but even better is cleaning-up and fixing issues in the code that you discover
-2. Make sure that your code is bug-free and does not introduce new bugs
-3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
-4. Verify that all the Travis-CI build checks have passed
