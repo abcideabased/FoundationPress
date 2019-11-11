@@ -47,9 +47,6 @@
 		  <?php if(get_privacy_policy_url()): ?>
 		    <a class="small dark button" href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a>
 		  <?php endif; ?>
-		  <button id="dismiss-cookies-close" class="close-button" aria-label="Dismiss alert" data-close>
-		    <span aria-hidden="true">&times;</span>
-		  </button>
 		</section>
 
 
