@@ -35,6 +35,8 @@ $(function() {
 		}, cookiesNoticeAnimateSpeed, function() {
 			// Animation complete.
 		});
+	} else {
+		$(cookiesNoticeID).remove();
 	}
 
 	// set local storage cookie acceptance
@@ -45,6 +47,9 @@ $(function() {
         opacity: 0,
       }, cookiesNoticeAnimateSpeed, function() {
         // Animation complete.
+
+				// Remove cookie popup
+				$(cookiesNoticeID).remove();
       });
 		}
 	});
