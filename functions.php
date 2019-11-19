@@ -117,3 +117,6 @@ require_once( 'library/dashboard-widgets.php' );
 
 /** Disable theme/plugin editors in WP backend */
 require_once( 'library/disable-admin-editors.php' );
+
+/** Disable tools for specific access level */
+require_once( 'library/disable-tools-menu.php' );
