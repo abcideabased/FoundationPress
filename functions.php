@@ -114,3 +114,6 @@ require_once( 'library/dashboard-widgets.php' );
 
 /** Remove post content type */
 //require_once( 'library/post-remove.php' );
+
+/** Disable theme/plugin editors in WP backend */
+require_once( 'library/disable-admin-editors.php' );
