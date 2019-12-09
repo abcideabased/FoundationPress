@@ -45,13 +45,13 @@ function foundationpress_custom_sizes( $sizes ) {
 	unset( $sizes['full']);
 	return array_merge(
 		$sizes, array(
-			'thumbnail' => __( 'Thumbnail' ),
-			'xsmall'    => __( 'XSmall' ),
-			'small'     => __( 'Small' ),
-			'medium'    => __( 'Medium' ),
-			'large'     => __( 'Large' ),
-			'xlarge'    => __( 'XLarge' ),
-			'full'      => __( 'Full' ),
+			'thumbnail' => __( 'Thumbnail', 'foundationpress' ),
+			'xsmall'    => __( 'XSmall', 'foundationpress' ),
+			'small'     => __( 'Small', 'foundationpress' ),
+			'medium'    => __( 'Medium', 'foundationpress' ),
+			'large'     => __( 'Large', 'foundationpress' ),
+			'xlarge'    => __( 'XLarge', 'foundationpress' ),
+			'full'      => __( 'Full', 'foundationpress' ),
 		)
 	);
 }
