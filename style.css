@@ -8,6 +8,8 @@ Author URI:         https://www.abcideabased.com
 
 License:            MIT License
 License URI:        http://www.opensource.org/licenses/mit-license.php
+
+Text Domain:        foundationpress
 */
 
 /* ----------------------------------------------------------------------------
@@ -22,14 +24,16 @@ License URI:        http://www.opensource.org/licenses/mit-license.php
   the easiest way to customize Foundation.
 
   All Sass files are located in the /assets/scss folder.
-  Please note that none of your scss files will be compiled to /stylesheets/foundation.css before you run
-  'npm run watch' or 'npm run build'.
+  Please note that none of your scss files will be compiled
+  to /dist/assets/css/app.css or editor.css before you run
+  'npm start' or 'npm run build'.
 
-  Please read the README.md file before getting started. More info on how
-  to use Sass with Foundation can be found here:
-  http://foundation.zurb.com/docs/sass.html
+  Please read the README.md file before getting started.
+  More info on how   to use Sass with Foundation can be
+  found here: http://foundation.zurb.com/docs/sass.html
 
-  If you for some reason would like to write plain css instead of using Sass,
-  you could just enqueue this file (style.css) to the header and add your styles in this file
+  If you for some reason would like to write plain css instead
+  of using Sass, you could just enqueue this file (style.css)
+  to the header and add your styles in this file.
 
 ---------------------------------------------------------------------------- */
