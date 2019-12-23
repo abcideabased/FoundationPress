@@ -13,6 +13,7 @@ function site_breadcrumbs() {
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
     $home_title         = 'Homepage';
+		$search_pg          = get_field('search_pg' ,'option');
 
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -285,8 +286,19 @@ function site_breadcrumbs() {
 
     } else if ( is_search() ) {
 
+				if($search_pg) {
+					echo '<li class="item-parent item-parent-Search"><a href="'. $search_pg .'" title="Search">Search</a></li>';
+				}
         // Search results page
-        echo '<li class="item-current item-current-' . get_search_query() . '"' . $itemListElement  . $ListItem . '><span class="show-for-sr">Current: </span><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '"><span' . $propName . '>Search results for: ' . get_search_query() . '</span></strong></li>';
+        echo '<li class="item-current item-current-' . get_search_query() . '"' . $itemListElement . $ListItem . '><span class="show-for-sr">Current: </span><strong class="bread-current bread-current-' . get_search_query() . '" title="';
+				if(!$search_pg) {
+					echo 'Search ';
+				}
+				echo 'Results For: ' . get_search_query() . '"><span' . $propName . '>';
+				if(!$search_pg) {
+					echo 'Search ';
+				}
+				echo 'Results For: ' . get_search_query() . '</span></strong></li>';
 
     } elseif ( is_404() ) {
 

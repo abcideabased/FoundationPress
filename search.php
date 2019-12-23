@@ -8,11 +8,11 @@ get_header(); ?>
 <div class="main-container">
 	<div class="main-grid">
 
-		<div class="main-breadcrumb">
+		<div class="main-breadcrumb-full-width">
 		  <?php site_breadcrumbs(); ?>
 		</div>
 
-		<main id="content" class="main-content" tabindex="-1">
+		<main id="content" class="main-content-full-width" tabindex="-1">
 			<div id="search-results">
 
 				<header>
@@ -44,7 +44,6 @@ get_header(); ?>
 			</div>
 
 		</main>
-	<?php get_sidebar(); ?>
 
 	</div>
 </div>
