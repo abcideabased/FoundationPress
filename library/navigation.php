@@ -1,10 +1,6 @@
 <?php
 /**
  * Register Menus
- *
- * @link http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
- * @package FoundationPress
- * @since FoundationPress 1.0.0
  */
 
 register_nav_menus(
@@ -26,8 +22,8 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 		wp_nav_menu(
 			array(
 				'container'      => false,
-				'menu_class'     => 'dropdown menu desktop-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+				'menu_class'     => 'vertical drilldown menu desktop-menu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-drilldown>%3$s</ul>',
 				'theme_location' => 'top-bar-r',
 				'depth'          => 3,
 				'fallback_cb'    => false,
