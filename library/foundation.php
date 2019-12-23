@@ -1,9 +1,6 @@
 <?php
 /**
  * Foundation PHP template
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
  */
 
 // Pagination.

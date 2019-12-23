@@ -1,13 +1,6 @@
 <?php
 /**
  * Customize the output of menus for Foundation privacy walker
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
-
-/**
- * Big thanks to Brett Mason (https://github.com/brettsmason) for the awesome walker
  */
 
 if ( ! class_exists( 'Foundationpress_Privacy_Walker' ) ) :

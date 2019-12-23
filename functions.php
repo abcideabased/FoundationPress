@@ -1,17 +1,12 @@
 <?php
 /**
- * Author: Ole Fredrik Lie
- * URL: http://olefredrik.com
- *
- * FoundationPress functions and definitions
+ * Functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
  * hooks in WordPress to change core functionality.
  *
  * @link https://codex.wordpress.org/Theme_Development
- * @package FoundationPress
- * @since FoundationPress 1.0.0
  */
 
 /** Various clean up functions */
@@ -78,9 +73,6 @@ require_once( 'library/author-enumeration-disable.php' );
 
 /** Disables the author pages to improve security */
 require_once( 'library/author-pages-disable.php' );
-
-/** Disables the comments RSS feed */
-require_once( 'library/feed-comments-disable.php' );
 
 /** Show 'Nothing Found' for an empty search instead of all posts/pages */
 require_once( 'library/search-empty.php' );

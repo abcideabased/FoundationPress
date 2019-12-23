@@ -1,9 +1,6 @@
 <?php
 /**
  * Change the class for sticky posts to .wp-sticky to avoid conflicts with Foundation's Sticky plugin
- *
- * @package FoundationPress
- * @since FoundationPress 2.2.0
  */
 
 if ( ! function_exists( 'foundationpress_sticky_posts' ) ) :

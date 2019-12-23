@@ -1,11 +1,8 @@
 <?php
 /**
  * Configure responsive images sizes
- *
- * @package WordPress
- * @subpackage FoundationPress
- * @since FoundationPress 2.6.0
  */
+
 // Add additional image sizes
 add_image_size( 'thumbnail', 150, 150 );
 add_image_size( 'xsmall', 300, 300 );

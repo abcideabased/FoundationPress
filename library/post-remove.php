@@ -1,8 +1,6 @@
 <?php
 /**
  * Hide default post type from WordPress Dashboard
- *
- * To re-enable, remove this code
  */
 
 // Remove from side menu

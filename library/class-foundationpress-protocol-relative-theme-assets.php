@@ -1,9 +1,6 @@
 <?php
 /**
  * Protocol Relative Theme Assets
- *
- * @package FoundationPress
- * @since FoundationPress 1.1.0
  */
 
 if ( ! class_exists( 'Foundationpress_Protocol_Relative_Theme_Assets' ) ) :

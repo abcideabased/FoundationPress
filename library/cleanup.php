@@ -1,9 +1,6 @@
 <?php
 /**
  * Clean up WordPress defaults
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
  */
 
 if ( ! function_exists( 'foundationpress_start_cleanup' ) ) :

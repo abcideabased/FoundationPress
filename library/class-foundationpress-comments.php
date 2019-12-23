@@ -1,8 +1,6 @@
 <?php
 /**
  * FoundationPress Comments
- *
- * @package FoundationPress
  */
 
 if ( ! class_exists( 'Foundationpress_Comments' ) ) :
