@@ -115,3 +115,6 @@ require_once( 'library/disable-tools-menu.php' );
 
 /** Use a custom search page */
 //require_once( 'library/search-page.php' );
+
+/** Add custom fields and meta data to be found by search */
+require_once( 'library/search-custom-meta-data.php' );
